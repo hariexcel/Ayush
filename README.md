@@ -13,7 +13,7 @@ A comprehensive healthcare dashboard application with Go backend and React Nativ
 
 - Go 1.19 or later
 - Node.js 16 or later
-- PostgreSQL 13 or later
+- SQLite (included)
 
 ## Setup
 
@@ -26,15 +26,7 @@ A comprehensive healthcare dashboard application with Go backend and React Nativ
    ```bash
    go mod tidy
    ```
-3. Set up PostgreSQL database and configure connection in `.env` file:
-   ```
-   DB_HOST=localhost
-   DB_USER=postgres
-   DB_PASSWORD=your_password
-   DB_NAME=ayush_healthcare
-   DB_PORT=5432
-   ```
-4. Run the backend server:
+3. Run the backend server:
    ```bash
    go run main.go
    ```
