@@ -9,13 +9,58 @@ A comprehensive healthcare dashboard application with Go backend and React Nativ
 - Appointment scheduling
 - Medical records access
 
+## Prerequisites
+
+- Go 1.19 or later
+- Node.js 16 or later
+- PostgreSQL 13 or later
+
 ## Setup
 
 ### Backend
-1. Install Go dependencies
-2. Configure database settings
-3. Run `go run main.go`
+1. Navigate to backend directory:
+   ```bash
+   cd backend
+   ```
+2. Install Go dependencies:
+   ```bash
+   go mod tidy
+   ```
+3. Set up PostgreSQL database and configure connection in `.env` file:
+   ```
+   DB_HOST=localhost
+   DB_USER=postgres
+   DB_PASSWORD=your_password
+   DB_NAME=ayush_healthcare
+   DB_PORT=5432
+   ```
+4. Run the backend server:
+   ```bash
+   go run main.go
+   ```
+   Server will start on http://localhost:8080
 
 ### Frontend
-1. Install dependencies: `npm install`
-2. Run the app: `npm start`
+1. Navigate to frontend directory:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+   Frontend will be available at http://localhost:3000
+
+## API Documentation
+
+The backend provides the following endpoints:
+
+- `GET /patient/:id` - Get patient details
+- `POST /patient/:id/health-metrics` - Add new health metrics
+- `POST /patient/:id/appointments` - Schedule new appointment
+
+All endpoints require Authorization header with a valid token.
